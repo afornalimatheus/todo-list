@@ -1,0 +1,48 @@
+.createTaskForm {
+  display: flex;
+  justify-content: center;
+  margin-top: calc(0px - 1.5rem - 6px);
+}
+
+.taskDescription {
+  border: 0;
+  width: 39.880rem;
+  height: 3.380rem;
+  text-indent: 1rem;
+  border-radius: 8px;
+  margin-right: 0.5rem;
+
+  color: var(--gray-100);
+  background: var(--gray-500);
+}
+
+.createTaskForm form {
+  display: flex;
+}
+
+
+
+.createTaskForm button[type=submit] {
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 5.625rem;
+  height: 3.380rem;
+  border-radius: 8px;
+  transition: background-color 0.1s;
+
+  font-weight: bold;
+
+  color: var(--gray-100);
+  background: var(--blue-dark);
+}
+
+.createTaskForm button[type=submit]:hover {
+  background: var(--blue);
+}
+
+.createTaskForm button svg {
+  margin-left: 0.5rem;
+}
