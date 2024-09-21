@@ -36,3 +36,10 @@ body, input, textarea, button {
     outline: transparent;
     box-shadow: 0 0 0 1px var(--purple-dark);
 }
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
