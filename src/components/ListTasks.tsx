@@ -1,4 +1,4 @@
-import { Trash } from 'phosphor-react'
+import { ClipboardText, Trash } from 'phosphor-react'
 import styles from './ListTasks.module.css'
 
 export function ListTasks() {
@@ -15,14 +15,23 @@ export function ListTasks() {
         </div>
       </header>
       <div className={styles.list}>
+        {/* <div className={styles.emptyListWrapper}>
+          <div className={styles.emptyList}>
+            <ClipboardText size={56} />
+            <span>
+              <strong>Você ainda não tem tarefas cadastradas</strong>
+            </span>
+            <span>Crie tarefas e organize seus itens a fazer</span>
+          </div>
+        </div> */}
         <div className={styles.listItem}>
           <div className={styles.descriptionItem}>
             <input 
               className={styles.customCheckbox} 
               type="checkbox" 
               name="" 
-              id="taskDescription"/>
-            <label htmlFor="taskDescription">Fazer a compra do mês</label>
+              id="taskDescription-1"/>
+            <label htmlFor="taskDescription-1">Fazer a compra do mês</label>
           </div>
           <div className={styles.actionItem}>
             <button title="Deletar tarefa">
@@ -36,8 +45,8 @@ export function ListTasks() {
               className={styles.customCheckbox} 
               type="checkbox" 
               name="" 
-              id="taskDescription"/>
-            <label htmlFor="taskDescription">Limpar a casa</label>
+              id="taskDescription-2"/>
+            <label htmlFor="taskDescription-2">Limpar a casa</label>
           </div>
           <div className={styles.actionItem}>
             <button title="Deletar tarefa">
