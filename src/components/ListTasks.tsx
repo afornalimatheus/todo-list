@@ -1,7 +1,13 @@
-import { ClipboardText, Trash } from 'phosphor-react'
+import type { TaskType } from './Task';
+import { ClipboardText } from 'phosphor-react'
 import styles from './ListTasks.module.css'
+import { Task } from './Task';
 
-export function ListTasks() {
+interface ListTasksProps {
+  tasks: TaskType[];
+}
+
+export function ListTasks({ tasks }: ListTasksProps) {
   return (
     <div className={styles.taskListWrapper}>
       <header>
@@ -24,36 +30,11 @@ export function ListTasks() {
             <span>Crie tarefas e organize seus itens a fazer</span>
           </div>
         </div> */}
-        <div className={styles.listItem}>
-          <div className={styles.descriptionItem}>
-            <input 
-              className={styles.customCheckbox} 
-              type="checkbox" 
-              name="" 
-              id="taskDescription-1"/>
-            <label htmlFor="taskDescription-1">Fazer a compra do mês</label>
-          </div>
-          <div className={styles.actionItem}>
-            <button title="Deletar tarefa">
-              <Trash size={24} />
-            </button>
-          </div>
-        </div>
-        <div className={styles.listItem}>
-          <div className={styles.descriptionItem}>
-            <input 
-              className={styles.customCheckbox} 
-              type="checkbox" 
-              name="" 
-              id="taskDescription-2"/>
-            <label htmlFor="taskDescription-2">Limpar a casa</label>
-          </div>
-          <div className={styles.actionItem}>
-            <button title="Deletar tarefa">
-              <Trash size={24} />
-            </button>
-          </div>
-        </div>
+        {tasks.map(task => {
+          return (
+            <Task task={task}/>
+          )
+        })}
       </div>
     </div>
   )
