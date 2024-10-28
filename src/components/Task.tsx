@@ -4,6 +4,7 @@ import { Trash } from 'phosphor-react'
 export interface TaskType {
   id: Number;
   description: string;
+  done: boolean;
 }
 
 interface TaskProps {
@@ -13,12 +14,13 @@ interface TaskProps {
 export function Task({ task }: TaskProps) {
   return (
       <div className={styles.taskWrapper}>
-        <div className={styles.taskDescription}>
+        <div className={styles.description}>
           <input  
-            type="checkbox" 
-            name="" 
-            id="taskDescription-1"/>
-          <label htmlFor="taskDescription-1">{task.description}</label>
+            type="checkbox"
+            id={`description-${task.id}`} 
+            checked={task.done}
+          />
+          <label htmlFor={`description-${task.id}`}>{task.description}</label>
         </div>
         <div className={styles.actionButton}>
           <button title="Deletar tarefa">

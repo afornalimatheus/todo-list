@@ -8,33 +8,39 @@ interface ListTasksProps {
 }
 
 export function ListTasks({ tasks }: ListTasksProps) {
+  const totalTasks = tasks.length;
+  const isTaskListEmpty = totalTasks === 0;
+
   return (
     <div className={styles.taskListWrapper}>
       <header>
         <div className={styles.wrapperCreatedTasks}>
           <span className={styles.labelCreatedTasks}>Tarefas criadas</span>
-          <span className={styles.counter}>10</span>
+          <span className={styles.counter}>{totalTasks}</span>
         </div>
         <div className={styles.wrapperCompletedTasks}>
           <span className={styles.labelCompletedTasks}>Concluídas</span>
-          <span className={styles.counter}>3 de 10</span>
+          <span className={styles.counter}>3 de {totalTasks}</span>
         </div>
       </header>
       <div className={styles.list}>
-        {/* <div className={styles.emptyListWrapper}>
-          <div className={styles.emptyList}>
-            <ClipboardText size={56} />
-            <span>
-              <strong>Você ainda não tem tarefas cadastradas</strong>
-            </span>
-            <span>Crie tarefas e organize seus itens a fazer</span>
+        {isTaskListEmpty ? (
+          <div className={styles.emptyListWrapper}>
+            <div className={styles.emptyList}>
+              <ClipboardText size={56} />
+              <span>
+                <strong>Você ainda não tem tarefas cadastradas</strong>
+              </span>
+              <span>Crie tarefas e organize seus itens a fazer</span>
+            </div>
           </div>
-        </div> */}
-        {tasks.map(task => {
-          return (
-            <Task task={task}/>
-          )
-        })}
+        ) : (
+          tasks.map(task => {
+            return (
+              <Task task={task}/>
+            )
+          })
+        )}
       </div>
     </div>
   )
