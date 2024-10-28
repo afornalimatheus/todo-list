@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type FormEvent, type InputHTMLAttributes } from 'react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 import styles from './CreateTask.module.css'
 
 import { PlusCircle } from 'phosphor-react'
